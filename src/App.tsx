@@ -194,15 +194,15 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1540039155733-56f1dea0ac11?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
 ];
 
 function HeroSection() {
@@ -240,29 +240,31 @@ function HeroSection() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
       <style>{`
-        .hero-background-mask {
-          -webkit-mask-image: url('/Mainlogopart.svg');
-          mask-image: url('/Mainlogopart.svg');
-          -webkit-mask-position: center;
-          mask-position: center;
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-          -webkit-mask-size: 15%;
-          mask-size: 15%;
+        .hero-mask-container {
+          -webkit-mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
+          mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
+          -webkit-mask-position: center, center;
+          mask-position: center, center;
+          -webkit-mask-repeat: no-repeat, no-repeat;
+          mask-repeat: no-repeat, no-repeat;
+          -webkit-mask-size: 15vh, 100% 100%;
+          mask-size: 15vh, 100% 100%;
+          -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
           animation: maskZoom 1.5s cubic-bezier(0.8, 0, 0.4, 1) 0.5s forwards;
         }
         @keyframes maskZoom {
           0% {
-            -webkit-mask-size: 15%;
-            mask-size: 15%;
+            -webkit-mask-size: 15vh, 100% 100%;
+            mask-size: 15vh, 100% 100%;
           }
           15%, 25% {
-            -webkit-mask-size: 15%;
-            mask-size: 15%;
+            -webkit-mask-size: 15vh, 100% 100%;
+            mask-size: 15vh, 100% 100%;
           }
           100% {
-            -webkit-mask-size: 12000%;
-            mask-size: 12000%;
+            -webkit-mask-size: 3000vh, 100% 100%;
+            mask-size: 3000vh, 100% 100%;
           }
         }
         .animate-gradient-flow {
@@ -305,7 +307,7 @@ function HeroSection() {
       {/* LAYER 3: The Stencil Mask Curtain (Solid Purple with a Logo cutout zooming infinitely) */}
       <div className="absolute inset-0 z-10 bg-[#2d0b30] hero-mask-container pointer-events-none" />
 
-      {/* LAYER 4: Dark Overlay to ensure text legibility once fully revealed, keeping it vibrant */}
+      {/* LAYER 3: Dark Overlay to ensure text legibility once fully revealed, keeping it vibrant */}
       <motion.div
         className="absolute inset-0 z-10 bg-[#1a051d]/40 backdrop-blur-[2px] pointer-events-none"
         initial={{ opacity: 0 }}
@@ -313,13 +315,10 @@ function HeroSection() {
         transition={{ duration: 1 }}
       />
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center pointer-events-none">
+      <div className="relative z-20 container mx-auto px-4 md:px-6 text-center pointer-events-none mt-20 md:mt-0">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{
-            opacity: showContent ? 1 : 0,
-            scale: showContent ? 1 : 0.95,
-          }}
+          animate={{ opacity: showContent ? 1 : 0, scale: showContent ? 1 : 0.95 }}
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto pointer-events-auto"
         >
@@ -376,7 +375,7 @@ function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </div >
   );
 }
 
@@ -454,18 +453,18 @@ function ServicesSection() {
               ))}
             </SliderContent>
 
-            <SliderBtnGroup className="absolute bottom-0 w-full h-fit dark:text-white text-white bg-black/40 backdrop-blur-md overflow-hidden grid grid-cols-2 md:grid-cols-4 rounded-b-xl border-t dark:border-white/10 border-white/20">
+            <SliderBtnGroup className="absolute bottom-0 w-full h-fit dark:text-white text-white bg-black/40 backdrop-blur-md overflow-hidden grid grid-cols-2 lg:grid-cols-4 rounded-b-xl border-t dark:border-white/10 border-white/20">
               {serviceItems.map((item, index) => (
                 <SliderBtn
                   key={index}
                   value={item.sliderName}
-                  className="text-left cursor-pointer p-4 transition-all hover:bg-[#d600ff]/20"
-                  progressBarClass="bg-[#d600ff] h-full opacity-60"
+                  className="text-left cursor-pointer p-4 transition-all hover:bg-[#d600ff]/10"
+                  progressBarClass="bg-[#d600ff] h-1 top-0 left-0 w-full opacity-100"
                 >
-                  <h2 className="relative px-3 py-1 text-xs font-bold rounded-full w-fit bg-[#d600ff] text-white mb-2 shadow-md">
+                  <h2 className="relative px-3 py-1 text-[10px] md:text-xs font-bold rounded-full w-fit bg-[#d600ff] text-white mb-2 shadow-md shrink-0">
                     {item.title}
                   </h2>
-                  <p className="text-xs md:text-sm font-medium line-clamp-2 opacity-90 text-white drop-shadow-md">
+                  <p className="text-[10px] md:text-sm font-medium line-clamp-2 md:line-clamp-none opacity-90 text-white drop-shadow-md leading-tight md:leading-normal">
                     {item.desc}
                   </p>
                 </SliderBtn>
