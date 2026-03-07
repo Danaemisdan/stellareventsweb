@@ -82,7 +82,7 @@ function Header() {
 
   return (
     <header className="w-full z-40 fixed top-0 left-0 bg-background/95 backdrop-blur-sm border-b">
-      <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center">
+      <div className="container relative mx-auto min-h-20 flex justify-between lg:grid lg:grid-cols-3 items-center">
         <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
           <NavigationMenu className="flex justify-start items-start">
             <NavigationMenuList className="flex justify-start gap-4 flex-row">
@@ -136,8 +136,8 @@ function Header() {
         <div className="flex lg:justify-center">
           <img src="/Fontpart.svg" alt="Stellar Events" className="h-16 w-auto object-contain drop-shadow-lg" />
         </div>
-        <div className="flex justify-end gap-6 w-full items-center">
-          <a href="#services" className="hidden md:inline text-sm font-medium hover:underline underline-offset-4 decoration-2 cursor-pointer transition-all">
+        <div className="hidden lg:flex justify-end gap-6 w-full items-center">
+          <a href="#services" className="text-sm font-medium hover:underline underline-offset-4 decoration-2 cursor-pointer transition-all">
             Services
           </a>
           <a href="#about" className="text-sm font-medium hover:underline underline-offset-4 decoration-2 cursor-pointer transition-all">
@@ -147,8 +147,8 @@ function Header() {
             Plan Event
           </Button>
         </div>
-        <div className="flex w-12 shrink lg:hidden items-end justify-end">
-          <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
+        <div className="flex lg:hidden items-center justify-end">
+          <Button variant="ghost" size="icon" onClick={() => setOpen(!isOpen)}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
           {isOpen && (
@@ -194,8 +194,8 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
@@ -203,9 +203,9 @@ const parallaxImages = [
   "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1540039155733-56f1dea0ac11?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1505236858219-8359eb29e325?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1470225620800-ecfa400acbecc?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800&vib=3",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800&vib=3",
+  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800&vib=3",
 ];
 
 function HeroSection() {
@@ -325,7 +325,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto pointer-events-auto"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tighter text-white flex flex-wrap justify-center items-center drop-shadow-md">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 tracking-tighter text-white flex flex-col md:flex-row flex-wrap justify-center items-center drop-shadow-md">
             {words.map((wordObj, wordIndex) => (
               <span key={wordIndex} className={`inline-block mr-3 md:mr-6 last:mr-0 py-2 ${wordObj.wordClass || ""}`}>
                 {wordObj.text.split("").map((letter, letterIndex) => (
@@ -456,18 +456,18 @@ function ServicesSection() {
               ))}
             </SliderContent>
 
-            <SliderBtnGroup className="absolute bottom-0 w-full h-fit dark:text-white text-white bg-black/40 backdrop-blur-md overflow-hidden grid grid-cols-2 lg:grid-cols-4 rounded-b-xl border-t dark:border-white/10 border-white/20">
+            <SliderBtnGroup className="absolute bottom-0 w-full h-fit dark:text-white text-white bg-black/40 backdrop-blur-md overflow-hidden flex flex-row overflow-x-auto snap-x snap-mandatory rounded-b-xl border-t dark:border-white/10 border-white/20 hide-scrollbar scroll-smooth">
               {serviceItems.map((item, index) => (
                 <SliderBtn
                   key={index}
                   value={item.sliderName}
-                  className="text-left cursor-pointer p-4 transition-all hover:bg-[#d600ff]/10"
+                  className="flex-shrink-0 w-[70%] sm:w-[50%] md:flex-1 text-left cursor-pointer p-3 md:p-4 transition-all hover:bg-[#d600ff]/10 snap-start md:snap-none"
                   progressBarClass="bg-[#d600ff] h-1 top-0 left-0 w-full opacity-100"
                 >
-                  <h2 className="relative px-3 py-1 text-[10px] md:text-xs font-bold rounded-full w-fit bg-[#d600ff] text-white mb-2 shadow-md shrink-0">
+                  <h2 className="relative px-3 py-1 text-xs font-bold rounded-full w-fit bg-[#d600ff] text-white mb-2 shadow-md shrink-0">
                     {item.title}
                   </h2>
-                  <p className="text-[10px] md:text-sm font-medium line-clamp-2 md:line-clamp-none opacity-90 text-white drop-shadow-md leading-tight md:leading-normal">
+                  <p className="text-xs md:text-sm font-medium line-clamp-2 md:line-clamp-none opacity-90 text-white drop-shadow-md leading-tight md:leading-normal">
                     {item.desc}
                   </p>
                 </SliderBtn>
@@ -504,14 +504,14 @@ function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Let's Create <span className="animate-gradient-flow italic font-serif">Magic</span> Together</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 leading-tight">Let's Create <span className="animate-gradient-flow italic font-serif">Magic</span> Together</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Ready to start planning your next unforgettable event? Contact us today for a free consultation.
             </p>
