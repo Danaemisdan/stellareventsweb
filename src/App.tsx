@@ -134,7 +134,7 @@ function Header() {
           </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-          <img src="/Fontpart.svg" alt="Stellar Events" className="h-16 w-auto object-contain" />
+          <img src="/Fontpart.svg" alt="Stellar Events" className="h-16 w-auto object-contain drop-shadow-lg" />
         </div>
         <div className="flex justify-end gap-6 w-full items-center">
           <a href="#services" className="hidden md:inline text-sm font-medium hover:underline underline-offset-4 decoration-2 cursor-pointer transition-all">
@@ -196,7 +196,7 @@ import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 const parallaxImages = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
@@ -240,31 +240,29 @@ function HeroSection() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
       <style>{`
-        .hero-mask-container {
-          -webkit-mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
-          mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
-          -webkit-mask-position: center, center;
-          mask-position: center, center;
-          -webkit-mask-repeat: no-repeat, no-repeat;
-          mask-repeat: no-repeat, no-repeat;
-          -webkit-mask-size: 15%, 100% 100%;
-          mask-size: 15%, 100% 100%;
-          -webkit-mask-composite: destination-out;
-          mask-composite: exclude;
+        .hero-background-mask {
+          -webkit-mask-image: url('/Mainlogopart.svg');
+          mask-image: url('/Mainlogopart.svg');
+          -webkit-mask-position: center;
+          mask-position: center;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-size: 15%;
+          mask-size: 15%;
           animation: maskZoom 1.5s cubic-bezier(0.8, 0, 0.4, 1) 0.5s forwards;
         }
         @keyframes maskZoom {
           0% {
-            -webkit-mask-size: 15%, 100% 100%;
-            mask-size: 15%, 100% 100%;
+            -webkit-mask-size: 15%;
+            mask-size: 15%;
           }
           15%, 25% {
-            -webkit-mask-size: 15%, 100% 100%;
-            mask-size: 15%, 100% 100%;
+            -webkit-mask-size: 15%;
+            mask-size: 15%;
           }
           100% {
-            -webkit-mask-size: 12000%, 100% 100%;
-            mask-size: 12000%, 100% 100%;
+            -webkit-mask-size: 12000%;
+            mask-size: 12000%;
           }
         }
         .animate-gradient-flow {
