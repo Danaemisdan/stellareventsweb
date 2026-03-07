@@ -194,8 +194,8 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
@@ -203,6 +203,9 @@ const parallaxImages = [
   "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1540039155733-56f1dea0ac11?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1505236858219-8359eb29e325?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1470225620800-ecfa400acbecc?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&q=80&w=800",
 ];
 
 function HeroSection() {
