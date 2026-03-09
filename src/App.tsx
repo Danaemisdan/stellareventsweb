@@ -201,11 +201,11 @@ const parallaxImages = [
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1540039155733-56f1dea0ac11?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1505236858219-8359eb29e325?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1470225620800-ecfa400acbecc?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=801",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=801",
+  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=801",
 ];
 
 function HeroSection() {
@@ -243,39 +243,6 @@ function HeroSection() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
       <style>{`
-        .hero-mask-container {
-          -webkit-mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
-          mask-image: url('/Mainlogopart.svg'), linear-gradient(black, black);
-          -webkit-mask-position: center, center;
-          mask-position: center, center;
-          -webkit-mask-repeat: no-repeat, no-repeat;
-          mask-repeat: no-repeat, no-repeat;
-          -webkit-mask-size: 15vh, 100% 100%;
-          mask-size: 15vh, 100% 100%;
-          -webkit-mask-composite: destination-out;
-          mask-composite: exclude;
-          animation: maskZoom 1.5s cubic-bezier(0.8, 0, 0.4, 1) 0.5s forwards;
-        }
-        @keyframes maskZoom {
-          0% {
-            -webkit-mask-size: 15vh, 100% 100%;
-            mask-size: 15vh, 100% 100%;
-            opacity: 1;
-          }
-          15%, 25% {
-            -webkit-mask-size: 15vh, 100% 100%;
-            mask-size: 15vh, 100% 100%;
-            opacity: 1;
-          }
-          85% {
-            opacity: 1;
-          }
-          100% {
-            -webkit-mask-size: 400vh, 100% 100%;
-            mask-size: 400vh, 100% 100%;
-            opacity: 0;
-          }
-        }
         .animate-gradient-flow {
           background: linear-gradient(to right, #8A2BE2, #800080, #800000, #FFFFFF, #800000, #800080, #8A2BE2);
           background-size: 200% auto;
@@ -313,8 +280,24 @@ function HeroSection() {
         <div className="absolute top-[40%] left-[40%] w-[50%] h-[50%] rounded-full bg-fuchsia-600/50 blur-[130px] animate-pulse" style={{ animationDelay: '3s', animationDuration: '7s' }} />
       </div>
 
-      {/* LAYER 3: The Stencil Mask Curtain (Solid Purple with a Logo cutout zooming infinitely) */}
-      <div className="absolute inset-0 z-10 bg-[#2d0b30] hero-mask-container pointer-events-none" />
+      {/* STABLE SPLASH SCREEN OVERLAY: Replaces the buggy CSS mask */}
+      {!showContent && (
+        <motion.div
+          className="absolute inset-0 z-50 flex items-center justify-center bg-[#2d0b30] pointer-events-none"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ delay: 1, duration: 0.8, ease: "easeInOut" }}
+        >
+          <motion.img
+            src="/Mainlogopart.svg"
+            alt="Stellar Events Icon"
+            className="w-32 h-auto"
+            initial={{ scale: 1 }}
+            animate={{ scale: 150 }}
+            transition={{ delay: 0.5, duration: 1.2, ease: [0.8, 0, 0.4, 1] }}
+          />
+        </motion.div>
+      )}
 
       {/* LAYER 3: Dark Overlay to ensure text legibility once fully revealed, keeping it vibrant */}
       <motion.div
