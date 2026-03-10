@@ -494,8 +494,14 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-transparent">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="relative py-20 overflow-hidden bg-transparent">
+      {/* Background glowing orbs for color */}
+      <div className="absolute inset-0 z-0 pointer-events-none mix-blend-screen opacity-60">
+        <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-fuchsia-600/40 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
+        <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/40 blur-[100px] animate-pulse" style={{ animationDelay: '2s', animationDuration: '5s' }} />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -525,32 +531,32 @@ function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Us</h3>
-                  <a href="mailto:reachout@stellareventsusa.com" className="text-muted-foreground hover:underline">reachout@stellareventsusa.com</a>
+                  <a href="mailto:reachout@stellareventsusa.com" className="text-muted-foreground hover:text-fuchsia-400 transition-colors">reachout@stellareventsusa.com</a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Visit Us</h3>
-                  <a href="https://www.stellareventsusa.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:underline">www.stellareventsusa.com</a>
+                  <a href="https://www.stellareventsusa.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-fuchsia-400 transition-colors">www.stellareventsusa.com</a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Instagram className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Instagram</h3>
-                  <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:underline">@stellareventsusa</a>
+                  <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-fuchsia-400 transition-colors">@stellareventsusa</a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0 mt-1">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -664,67 +670,72 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="border-t bg-background/50 backdrop-blur-md">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
+    <footer className="bg-gradient-to-br from-[#1a051d] via-[#2d0b30] to-[#4a0e4e] text-white border-t-0 shadow-[0_-10px_40px_rgba(214,0,255,0.15)] relative overflow-hidden">
+      {/* Footer Ambient Orbs */}
+      <div className="absolute inset-0 z-0 pointer-events-none mix-blend-screen opacity-40">
+        <div className="absolute top-[20%] left-[40%] w-[40%] h-[40%] rounded-full bg-pink-500/40 blur-[100px]" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <img src="/Mainlogopart.svg" alt="Stellar Events Logo" className="h-20 md:h-28 w-auto mb-6" />
-            <p className="text-sm text-muted-foreground">
-              Creating unforgettable moments since 2010. Your trusted partner in event planning excellence.
+            <img src="/Mainlogopart.svg" alt="Stellar Events Logo" className="h-20 md:h-28 w-auto mb-6 drop-shadow-lg" />
+            <p className="text-sm text-white/80 leading-relaxed">
+              Creating unforgettable moments since 2010. Your trusted partner in vibrant, energetic event planning excellence.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+            <h3 className="mb-4 text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 to-pink-300">Quick Links</h3>
+            <nav className="space-y-3 text-sm">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Home
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Services
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Portfolio
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Contact
               </a>
             </nav>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Services</h3>
-            <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+            <h3 className="mb-4 text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 to-pink-300">Services</h3>
+            <nav className="space-y-3 text-sm">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Corporate Events
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Weddings
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Social Events
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="#" className="block transition-all text-white/80 hover:text-white hover:translate-x-1">
                 Virtual Events
               </a>
             </nav>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-4">
+            <h3 className="mb-4 text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 to-pink-300">Newsletter</h3>
+            <p className="text-sm text-white/80 mb-4">
               Subscribe for event planning tips and exclusive offers.
             </p>
             <form className="relative">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="pr-12"
+                className="pr-12 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-fuchsia-500"
               />
               <Button
                 type="submit"
                 size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full"
+                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-fuchsia-600 hover:bg-fuchsia-500 text-white"
               >
                 <Send className="h-4 w-4" />
               </Button>
@@ -732,15 +743,15 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row">
+          <p className="text-sm text-white/60">
             © 2024 Stellar Events. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
+            <a href="#" className="transition-colors text-white/60 hover:text-white">
               Privacy Policy
             </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            <a href="#" className="transition-colors text-white/60 hover:text-white">
               Terms of Service
             </a>
           </nav>
