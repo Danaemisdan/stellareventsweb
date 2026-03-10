@@ -16,13 +16,14 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
-  MapPin,
   Mail,
   Menu,
   Phone,
   Send,
   X,
   MoveRight,
+  Globe,
+  User,
 } from "lucide-react";
 
 function Header() {
@@ -512,7 +513,7 @@ function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Call Us</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">703 424 5847</p>
                 </div>
               </div>
 
@@ -522,17 +523,31 @@ function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Us</h3>
-                  <p className="text-muted-foreground">hello@stellarevents.com</p>
+                  <a href="mailto:reachout@stellareventsusa.com" className="text-muted-foreground hover:underline">reachout@stellareventsusa.com</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <MapPin className="w-6 h-6" />
+                  <Globe className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Visit Us</h3>
-                  <p className="text-muted-foreground">123 Event Avenue<br />New York, NY 10001</p>
+                  <a href="https://www.stellareventsusa.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:underline">www.stellareventsusa.com</a>
+                </div>
+              </div>
+
+              <div className="flex pt-4 mt-6 border-t items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <User className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Direct Contact</h3>
+                  <p className="text-muted-foreground leading-relaxed mt-1">
+                    Name: Jo<br />
+                    Phone: 703 424 5847<br />
+                    Email: <a href="mailto:Jo@stellareventsusa.com" className="hover:underline">Jo@stellareventsusa.com</a>
+                  </p>
                 </div>
               </div>
             </div>
