@@ -24,6 +24,8 @@ import {
   MoveRight,
   Globe,
   User,
+  Instagram,
+  MapPin,
 } from "lucide-react";
 
 function Header() {
@@ -534,6 +536,26 @@ function ContactSection() {
                 <div>
                   <h3 className="font-semibold">Visit Us</h3>
                   <a href="https://www.stellareventsusa.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:underline">www.stellareventsusa.com</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <Instagram className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Instagram</h3>
+                  <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:underline">@stellareventsusa</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Location</h3>
+                  <p className="text-muted-foreground">Hilton Garden Inn 3950 Fair Ridge Dr, Fairfax</p>
                 </div>
               </div>
 
