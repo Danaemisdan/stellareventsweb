@@ -197,18 +197,18 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?auto=format&fit=crop&q=80&w=800", // Indian Wedding
-  "https://images.unsplash.com/photo-1728221052130-810b42a6130e?auto=format&fit=crop&q=80&w=800", // Indian Wedding
-  "https://images.unsplash.com/photo-1700623066425-f917e61f7636?auto=format&fit=crop&q=80&w=800", // Diwali
-  "https://images.unsplash.com/photo-1666638787411-c5c8ef25d229?auto=format&fit=crop&q=80&w=800", // Diwali
-  "https://images.unsplash.com/photo-1601118964938-228a89955311?auto=format&fit=crop&q=80&w=800", // Christmas
-  "https://images.unsplash.com/photo-1609421141185-8a4f37a5d063?auto=format&fit=crop&q=80&w=800", // Christmas
-  "https://images.unsplash.com/photo-1759519238029-689e99c6d19e?auto=format&fit=crop&q=80&w=800", // Hotel Ballroom
-  "https://images.unsplash.com/photo-1769018508631-fe4ebf3fba3a?auto=format&fit=crop&q=80&w=800", // Hotel Event
-  "https://images.unsplash.com/photo-1547692869-a509540be98e?auto=format&fit=crop&q=80&w=800", // Barn Wedding
-  "https://images.unsplash.com/photo-1636309457923-54beab9d9bb5?auto=format&fit=crop&q=80&w=800", // Farm Wedding
-  "https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?auto=format&fit=crop&q=80&w=801", // Offset duplicate
-  "https://images.unsplash.com/photo-1728221052130-810b42a6130e?auto=format&fit=crop&q=80&w=801", // Offset duplicate
+  "https://images.unsplash.com/photo-1735052711950-c31c729c2a4e?auto=format&fit=crop&q=80&w=800", // Indian Wedding Candid
+  "https://images.unsplash.com/photo-1744805624954-a6686543c3ff?auto=format&fit=crop&q=80&w=800", // Indian Wedding Decor
+  "https://images.unsplash.com/photo-1701410888557-f0636b8f28b1?auto=format&fit=crop&q=80&w=800", // Diwali Candles
+  "https://images.unsplash.com/photo-1675507326998-d7433e8e79e7?auto=format&fit=crop&q=80&w=800", // Diwali Celebration
+  "https://images.unsplash.com/photo-1699730164892-d7c433524ff3?auto=format&fit=crop&q=80&w=800", // Christmas Crowd
+  "https://images.unsplash.com/photo-1669246847528-af0113fd63dd?auto=format&fit=crop&q=80&w=800", // Christmas Banquet
+  "https://images.unsplash.com/photo-1759519238029-689e99c6d19e?auto=format&fit=crop&q=80&w=800", // Marriott Hotel Ballroom
+  "https://images.unsplash.com/photo-1764471444363-e6dc0f9773bc?auto=format&fit=crop&q=80&w=800", // Corporate Ballroom
+  "https://images.unsplash.com/photo-1768594266719-ab1569870a1f?auto=format&fit=crop&q=80&w=800", // Rustic Barn Interior
+  "https://images.unsplash.com/photo-1677677402907-05f2883e3f66?auto=format&fit=crop&q=80&w=800", // Farm Ceremony
+  "https://images.unsplash.com/photo-1763984266819-815a74262d13?auto=format&fit=crop&q=80&w=800", // Dance Floor
+  "https://images.unsplash.com/photo-1677676700414-ff5d6302a978?auto=format&fit=crop&q=80&w=800", // Catering / Cake
 ];
 
 function HeroSection() {
