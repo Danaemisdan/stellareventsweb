@@ -197,18 +197,18 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1735052711950-c31c729c2a4e?auto=format&fit=crop&q=80&w=800", // Indian Wedding Candid
-  "https://images.unsplash.com/photo-1744805624954-a6686543c3ff?auto=format&fit=crop&q=80&w=800", // Indian Wedding Decor
-  "https://images.unsplash.com/photo-1701410888557-f0636b8f28b1?auto=format&fit=crop&q=80&w=800", // Diwali Candles
-  "https://images.unsplash.com/photo-1675507326998-d7433e8e79e7?auto=format&fit=crop&q=80&w=800", // Diwali Celebration
-  "https://images.unsplash.com/photo-1699730164892-d7c433524ff3?auto=format&fit=crop&q=80&w=800", // Christmas Crowd
-  "https://images.unsplash.com/photo-1669246847528-af0113fd63dd?auto=format&fit=crop&q=80&w=800", // Christmas Banquet
-  "https://images.unsplash.com/photo-1759519238029-689e99c6d19e?auto=format&fit=crop&q=80&w=800", // Marriott Hotel Ballroom
-  "https://images.unsplash.com/photo-1764471444363-e6dc0f9773bc?auto=format&fit=crop&q=80&w=800", // Corporate Ballroom
-  "https://images.unsplash.com/photo-1768594266719-ab1569870a1f?auto=format&fit=crop&q=80&w=800", // Rustic Barn Interior
-  "https://images.unsplash.com/photo-1677677402907-05f2883e3f66?auto=format&fit=crop&q=80&w=800", // Farm Ceremony
-  "https://images.unsplash.com/photo-1763984266819-815a74262d13?auto=format&fit=crop&q=80&w=800", // Dance Floor
-  "https://images.unsplash.com/photo-1677676700414-ff5d6302a978?auto=format&fit=crop&q=80&w=800", // Catering / Cake
+  "https://images.unsplash.com/photo-1656283384093-1e227e621fad?auto=format&fit=crop&q=80&w=800", // Laser concert crowd
+  "https://images.unsplash.com/photo-1768889098054-95490bbe283d?auto=format&fit=crop&q=80&w=800", // Epic fireworks 
+  "https://images.unsplash.com/photo-1712314947762-039576e58bc6?auto=format&fit=crop&q=80&w=800", // Luxury wedding lighting
+  "https://images.unsplash.com/photo-1764510376403-4b86724d6e1c?auto=format&fit=crop&q=80&w=800", // High energy DJ/nightlife
+  "https://images.unsplash.com/photo-1761110787206-2cc164e4913c?auto=format&fit=crop&q=80&w=800", // Grand dramatic ballroom
+  "https://images.unsplash.com/photo-1488036106564-87ecb155bb15?auto=format&fit=crop&q=80&w=800", // Epic outdoor stage festival
+  "https://images.unsplash.com/photo-1717011969223-0217a302ec6f?auto=format&fit=crop&q=80&w=800", // Vibrant colorful wedding
+  "https://images.unsplash.com/photo-1769812343285-ec0775437680?auto=format&fit=crop&q=80&w=800", // Massive corporate gala
+  "https://images.unsplash.com/photo-1516450137517-162bfbeb8dba?auto=format&fit=crop&q=80&w=800", // Energetic live music crowd
+  "https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?auto=format&fit=crop&q=80&w=800", // Spectacular dance floor
+  "https://images.unsplash.com/photo-1772554699679-edde1037c125?auto=format&fit=crop&q=80&w=800", // Colorful cultural celebration
+  "https://images.unsplash.com/photo-1605374180794-204296e6df5b?auto=format&fit=crop&q=80&w=800", // Glowing luxury venue
 ];
 
 function HeroSection() {
@@ -453,7 +453,7 @@ function ServicesSection() {
                 <SliderBtn
                   key={index}
                   value={item.sliderName}
-                  className="flex-shrink-0 w-[70%] sm:w-[50%] md:flex-1 text-left cursor-pointer p-3 md:p-4 transition-all hover:bg-[#d600ff]/10 snap-start md:snap-none"
+                  className="flex-shrink-0 w-[70%] sm:w-[50%] md:flex-1 flex flex-col justify-start items-start text-left cursor-pointer p-3 md:p-4 transition-all hover:bg-[#d600ff]/10 snap-start md:snap-none"
                   progressBarClass="bg-[#d600ff] h-1 top-0 left-0 w-full opacity-100"
                 >
                   <h2 className="relative px-3 py-1 text-xs font-bold rounded-full w-fit bg-[#d600ff] text-white mb-2 shadow-md shrink-0">
