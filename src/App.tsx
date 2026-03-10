@@ -549,13 +549,17 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Location</h3>
-                  <p className="text-muted-foreground">Hilton Garden Inn 3950 Fair Ridge Dr, Fairfax</p>
+                  <h3 className="font-semibold">In Collaboration With</h3>
+                  <div className="text-muted-foreground mt-1 space-y-1">
+                    <p>Hilton Garden Inn Fairfax</p>
+                    <p>Lock Heart Farms Haymarket</p>
+                    <p>Marriott Alexandria</p>
+                  </div>
                 </div>
               </div>
 
