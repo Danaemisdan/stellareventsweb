@@ -197,18 +197,18 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=801",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=801",
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=801",
+  "https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?auto=format&fit=crop&q=80&w=800", // Indian Wedding
+  "https://images.unsplash.com/photo-1728221052130-810b42a6130e?auto=format&fit=crop&q=80&w=800", // Indian Wedding
+  "https://images.unsplash.com/photo-1700623066425-f917e61f7636?auto=format&fit=crop&q=80&w=800", // Diwali
+  "https://images.unsplash.com/photo-1666638787411-c5c8ef25d229?auto=format&fit=crop&q=80&w=800", // Diwali
+  "https://images.unsplash.com/photo-1601118964938-228a89955311?auto=format&fit=crop&q=80&w=800", // Christmas
+  "https://images.unsplash.com/photo-1609421141185-8a4f37a5d063?auto=format&fit=crop&q=80&w=800", // Christmas
+  "https://images.unsplash.com/photo-1759519238029-689e99c6d19e?auto=format&fit=crop&q=80&w=800", // Hotel Ballroom
+  "https://images.unsplash.com/photo-1769018508631-fe4ebf3fba3a?auto=format&fit=crop&q=80&w=800", // Hotel Event
+  "https://images.unsplash.com/photo-1547692869-a509540be98e?auto=format&fit=crop&q=80&w=800", // Barn Wedding
+  "https://images.unsplash.com/photo-1636309457923-54beab9d9bb5?auto=format&fit=crop&q=80&w=800", // Farm Wedding
+  "https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?auto=format&fit=crop&q=80&w=801", // Offset duplicate
+  "https://images.unsplash.com/photo-1728221052130-810b42a6130e?auto=format&fit=crop&q=80&w=801", // Offset duplicate
 ];
 
 function HeroSection() {
