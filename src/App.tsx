@@ -515,8 +515,8 @@ function ContactSection() {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
@@ -525,8 +525,8 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
@@ -536,7 +536,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
@@ -546,7 +546,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Instagram className="w-6 h-6" />
                 </div>
                 <div>
@@ -556,7 +556,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0 mt-1">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0 mt-1">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -569,8 +569,8 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex pt-4 mt-6 border-t items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex pt-4 mt-6 border-t items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <User className="w-6 h-6" />
                 </div>
                 <div>
