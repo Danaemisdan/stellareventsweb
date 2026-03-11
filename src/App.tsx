@@ -518,6 +518,32 @@ function ContactSection() {
             </p>
 
             <div className="space-y-6">
+              {/* Featured Instagram Block - Enlarged and highly colorful */}
+              <a
+                href="https://instagram.com/stellareventsusa"
+                target="_blank"
+                rel="noreferrer"
+                className="group block relative overflow-hidden rounded-2xl p-[2px] w-full transition-transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-fuchsia-500/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-600 via-purple-600 to-pink-500 animate-bg-gradient opacity-100" />
+                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-yellow-400 via-fuchsia-500 to-purple-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+                    <Instagram className="w-8 h-8" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-purple-600 dark:from-fuchsia-400 dark:to-purple-400 mb-1">
+                      For more updates follow us!
+                    </h3>
+                    <p className="text-lg font-semibold text-fuchsia-500 group-hover:text-fuchsia-400 transition-colors">
+                      @stellareventsusa
+                    </p>
+                  </div>
+                  <div className="hidden sm:flex ml-auto items-center justify-center w-10 h-10 rounded-full bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-400 group-hover:translate-x-2 transition-transform">
+                    <MoveRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </a>
+
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6" />
@@ -548,18 +574,6 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-                  <Instagram className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold">Instagram</h3>
-                  <div className="text-muted-foreground">
-                    For more updates follow us {" "}
-                    <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-fuchsia-500 hover:text-fuchsia-400 transition-colors">@stellareventsusa</a>
-                  </div>
-                </div>
-              </div>
 
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 animate-bg-gradient flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0 mt-1">
