@@ -211,7 +211,7 @@ const parallaxImages = [
   "https://images.unsplash.com/photo-1645856052472-95fe99103c11?auto=format&fit=crop&q=80&w=800", // Indian wedding petals
   "https://images.unsplash.com/photo-1612872642947-931dc3bcb5ac?auto=format&fit=crop&q=80&w=800", // Indian mandap ceremony
   "https://images.unsplash.com/photo-1616787671779-eed71117a65e?auto=format&fit=crop&q=80&w=800", // Holi crowd colors
-  "https://images.unsplash.com/photo-1769505312918-3400cf202bb7?auto=format&fit=crop&q=80&w=800", // Holi celebration
+  "https://images.unsplash.com/photo-1576076644062-72e15bd5b839?auto=format&fit=crop&q=80&w=800", // Holi crowd celebration
 ];
 
 function HeroSection() {
