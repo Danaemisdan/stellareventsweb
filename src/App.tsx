@@ -197,18 +197,17 @@ function Header() {
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 
 const parallaxImages = [
-  "https://images.unsplash.com/photo-1656283384093-1e227e621fad?auto=format&fit=crop&q=80&w=800", // Laser concert crowd
-  "https://images.unsplash.com/photo-1768889098054-95490bbe283d?auto=format&fit=crop&q=80&w=800", // Epic fireworks 
-  "https://images.unsplash.com/photo-1712314947762-039576e58bc6?auto=format&fit=crop&q=80&w=800", // Luxury wedding lighting
-  "https://images.unsplash.com/photo-1764510376403-4b86724d6e1c?auto=format&fit=crop&q=80&w=800", // High energy DJ/nightlife
-  "https://images.unsplash.com/photo-1761110787206-2cc164e4913c?auto=format&fit=crop&q=80&w=800", // Grand dramatic ballroom
-  "https://images.unsplash.com/photo-1488036106564-87ecb155bb15?auto=format&fit=crop&q=80&w=800", // Epic outdoor stage festival
-  "https://images.unsplash.com/photo-1717011969223-0217a302ec6f?auto=format&fit=crop&q=80&w=800", // Vibrant colorful wedding
-  "https://images.unsplash.com/photo-1769812343285-ec0775437680?auto=format&fit=crop&q=80&w=800", // Massive corporate gala
-  "https://images.unsplash.com/photo-1516450137517-162bfbeb8dba?auto=format&fit=crop&q=80&w=800", // Energetic live music crowd
-  "https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?auto=format&fit=crop&q=80&w=800", // Spectacular dance floor
-  "https://images.unsplash.com/photo-1772554699679-edde1037c125?auto=format&fit=crop&q=80&w=800", // Colorful cultural celebration
-  "https://images.unsplash.com/photo-1605374180794-204296e6df5b?auto=format&fit=crop&q=80&w=800", // Glowing luxury venue
+  "/images/1691430_lg.jpg",
+  "/images/1714188_lg.jpg",
+  "/images/2024-11-09.webp",
+  "/images/2025-04-28.webp",
+  "/images/2025-06-07.webp",
+  "/images/25dfba58-c833-4460-9e8f-319f232eb27d.webp",
+  "/images/3385835_lg.jpg",
+  "/images/3385936_lg.jpg",
+  "/images/3385946_lg.jpg",
+  "/images/3385996_lg.jpg",
+  "/images/53a27762-b360-42d4-8b12-02ff1a8b0e08.webp",
 ];
 
 function HeroSection() {
