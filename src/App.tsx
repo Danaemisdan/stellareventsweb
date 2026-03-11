@@ -554,7 +554,10 @@ function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Instagram</h3>
-                  <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-fuchsia-400 transition-colors">@stellareventsusa</a>
+                  <div className="text-muted-foreground">
+                    For more updates follow us {" "}
+                    <a href="https://instagram.com/stellareventsusa" target="_blank" rel="noreferrer" className="text-fuchsia-500 hover:text-fuchsia-400 transition-colors">@stellareventsusa</a>
+                  </div>
                 </div>
               </div>
 
