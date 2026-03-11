@@ -208,11 +208,10 @@ const parallaxImages = [
   "/images/3385946_lg.jpg",
   "/images/3385996_lg.jpg",
   "/images/53a27762-b360-42d4-8b12-02ff1a8b0e08.webp",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800", // Elegant wedding
-  "https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?auto=format&fit=crop&q=80&w=800", // Indian wedding ceremony
-  "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800", // Colorful Indian wedding
-  "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800", // Holi festival colors
-  "https://images.unsplash.com/photo-1603298571716-31eed4e0d8b1?auto=format&fit=crop&q=80&w=800", // Holi celebration
+  "https://images.unsplash.com/photo-1645856052472-95fe99103c11?auto=format&fit=crop&q=80&w=800", // Indian wedding petals
+  "https://images.unsplash.com/photo-1612872642947-931dc3bcb5ac?auto=format&fit=crop&q=80&w=800", // Indian mandap ceremony
+  "https://images.unsplash.com/photo-1616787671779-eed71117a65e?auto=format&fit=crop&q=80&w=800", // Holi crowd colors
+  "https://images.unsplash.com/photo-1769505312918-3400cf202bb7?auto=format&fit=crop&q=80&w=800", // Holi celebration
 ];
 
 function HeroSection() {
