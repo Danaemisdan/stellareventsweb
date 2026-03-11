@@ -208,6 +208,7 @@ const parallaxImages = [
   "/images/3385946_lg.jpg",
   "/images/3385996_lg.jpg",
   "/images/53a27762-b360-42d4-8b12-02ff1a8b0e08.webp",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
 ];
 
 function HeroSection() {
