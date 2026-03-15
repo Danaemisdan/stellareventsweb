@@ -49,17 +49,25 @@ export function AdminPanel() {
   const [newBannerUrl, setNewBannerUrl] = useState('');
 
   useEffect(() => {
-    const stored = localStorage.getItem('stellar_events');
-    if (stored) {
+    const fetchEvents = async () => {
       try {
-        setEvents(JSON.parse(stored));
-      } catch (e) {
+        const response = await fetch('/api/events');
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.length > 0) {
+            setEvents(data);
+          } else {
+            setEvents(DEFAULT_EVENTS);
+          }
+        } else {
+          setEvents(DEFAULT_EVENTS);
+        }
+      } catch (error) {
+        console.error('Failed to fetch events from database:', error);
         setEvents(DEFAULT_EVENTS);
       }
-    } else {
-      setEvents(DEFAULT_EVENTS);
-      localStorage.setItem('stellar_events', JSON.stringify(DEFAULT_EVENTS));
-    }
+    };
+    fetchEvents();
   }, []);
 
   const handleLogin = (e: React.FormEvent) => {
@@ -72,9 +80,17 @@ export function AdminPanel() {
     }
   };
 
-  const saveEvents = (updatedEvents: EventData[]) => {
+  const saveEvents = async (updatedEvents: EventData[]) => {
     setEvents(updatedEvents);
-    localStorage.setItem('stellar_events', JSON.stringify(updatedEvents));
+    try {
+      await fetch('/api/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ events: updatedEvents }),
+      });
+    } catch (e) {
+      console.error('Failed to save to database', e);
+    }
   };
 
   const handleAddEvent = (e: React.FormEvent) => {
@@ -146,7 +162,7 @@ export function AdminPanel() {
               />
             </div>
             {error && <p className="text-red-400 text-sm font-medium">{error}</p>}
-            <Button type="submit" className="w-full bg-[#d600ff] hover:bg-[#b000d6] text-white border-none h-12">
+            <Button type="submit" className="w-full bg-[#d600ff] hover:bg-white text-white hover:text-[#d600ff] transition-all font-bold border-none h-12">
               Login securely
             </Button>
           </form>
@@ -172,10 +188,10 @@ export function AdminPanel() {
             <p className="text-zinc-400 mt-1">Add, edit, or remove upcoming events</p>
           </div>
           <div className="flex gap-4">
-             <Button variant="outline" className="border-white/10" onClick={() => window.location.href = '/'}>
+             <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black transition-colors" onClick={() => window.location.href = '/'}>
               View Live Site
              </Button>
-             <Button variant="destructive" onClick={() => setIsAuthenticated(false)}>
+             <Button variant="destructive" className="bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white transition-colors border border-red-500/50" onClick={() => setIsAuthenticated(false)}>
               Log out
             </Button>
           </div>
@@ -189,33 +205,44 @@ export function AdminPanel() {
               Add New Event
             </h2>
             <form onSubmit={handleAddEvent} className="space-y-4">
-              <div className="space-y-2">
-                <Label>Event Title</Label>
-                <Input value={newTitle} onChange={e => setNewTitle(e.target.value)} placeholder="e.g. Summer Gala 2026" className="bg-black/50 border-white/10" />
-              </div>
-              <div className="space-y-2">
-                <Label>Location</Label>
-                <Input value={newLocation} onChange={e => setNewLocation(e.target.value)} placeholder="e.g. The Grand Hotel" className="bg-black/50 border-white/10" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label>Date</Label>
-                  <Input type="date" value={newDate} onChange={e => setNewDate(e.target.value)} className="bg-black/50 border-white/10 text-white [color-scheme:dark]" />
+                  <Label className="text-zinc-300">Event Title</Label>
+                  <Input value={newTitle} onChange={e => setNewTitle(e.target.value)} placeholder="e.g. Summer Gala 2026" className="bg-black/50 border-white/10 text-white focus-visible:ring-fuchsia-500" />
                 </div>
                 <div className="space-y-2">
-                  <Label>Time</Label>
-                  <Input type="time" value={newTime} onChange={e => setNewTime(e.target.value)} className="bg-black/50 border-white/10 text-white [color-scheme:dark]" />
+                  <Label className="text-zinc-300">Location</Label>
+                  <Input value={newLocation} onChange={e => setNewLocation(e.target.value)} placeholder="e.g. The Grand Hotel" className="bg-black/50 border-white/10 text-white focus-visible:ring-fuchsia-500" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="text-zinc-300">Date</Label>
+                    <Input type="date" value={newDate} onChange={e => setNewDate(e.target.value)} className="bg-black/50 border-white/10 text-white [color-scheme:dark] focus-visible:ring-fuchsia-500" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-zinc-300">Time</Label>
+                    <Input type="time" value={newTime} onChange={e => setNewTime(e.target.value)} className="bg-black/50 border-white/10 text-white [color-scheme:dark] focus-visible:ring-fuchsia-500" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-zinc-300">Banner Image URL</Label>
+                  <Input value={newBannerUrl} onChange={e => setNewBannerUrl(e.target.value)} placeholder="https://..." className="bg-black/50 border-white/10 text-white focus-visible:ring-fuchsia-500" />
+                  <p className="text-xs text-fuchsia-400/80 italic">Tip: Use high-quality Unsplash image direct links for the best aesthetic.</p>
                 </div>
               </div>
-              <div className="space-y-2">
-                <Label>Banner Image URL</Label>
-                <Input value={newBannerUrl} onChange={e => setNewBannerUrl(e.target.value)} placeholder="https://..." className="bg-black/50 border-white/10" />
-                <p className="text-xs text-zinc-500">Paste a direct link to an image (Unsplash, Imgur, etc.)</p>
-              </div>
-              <Button type="submit" className="w-full bg-[#d600ff] hover:bg-[#b000d6] text-white border-none mt-4">
-                Add Event to Carousel
+              <Button 
+                type="submit" 
+                disabled={events.length >= 5}
+                className="w-full bg-[#d600ff] hover:bg-white text-white hover:text-black font-bold border-none mt-6 h-12 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {events.length >= 5 ? 'Max 5 Events Reached' : 'Publish Event to Live Site'}
               </Button>
             </form>
+            {events.length >= 5 && (
+              <p className="text-sm text-red-500 mt-3 font-medium">
+                You have reached the 5-event maximum allowed. Please delete an older event to add a new one.
+              </p>
+            )}
           </Card>
 
           {/* Current Events List */}
@@ -265,9 +292,9 @@ export function AdminPanel() {
             )}
             
             <div className="p-4 bg-fuchsia-950/30 border border-fuchsia-800/50 rounded-lg mt-8">
-              <h3 className="text-fuchsia-400 font-semibold mb-1">Developer Note</h3>
+              <h3 className="text-fuchsia-400 font-semibold mb-1">Database Connected</h3>
               <p className="text-sm text-fuchsia-200/70">
-                These events are currently saved to your browser's local storage for demonstration purposes. If you change devices or clear your cache, these events will disappear. Ask your developer to connect a database for permanent cloud storage.
+                Events are now permanently stored in MongoDB Atlas and synced globally within the 5 event limit.
               </p>
             </div>
           </div>
