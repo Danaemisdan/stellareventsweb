@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { MapPin, Calendar, Clock, MoveRight } from 'lucide-react';
 import type { EventData } from './AdminPanel';
 import { DEFAULT_EVENTS } from './AdminPanel';
@@ -9,28 +8,26 @@ export function UpcomingEvents() {
   const [events, setEvents] = useState<EventData[]>([]);
 
   useEffect(() => {
-    const fetchEvents = () => {
-      const stored = localStorage.getItem('stellar_events');
-      if (stored) {
-        try {
-          const parsed = JSON.parse(stored);
-          if (parsed && parsed.length > 0) {
-            setEvents(parsed);
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events');
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.length > 0) {
+            setEvents(data);
           } else {
             setEvents(DEFAULT_EVENTS);
           }
-        } catch (e) {
+        } else {
           setEvents(DEFAULT_EVENTS);
         }
-      } else {
+      } catch (error) {
+        console.error('Error fetching global events:', error);
         setEvents(DEFAULT_EVENTS);
       }
     };
 
     fetchEvents();
-    // Allow reactivity to localStorage changes in the same window (mostly for development)
-    window.addEventListener('storage', fetchEvents);
-    return () => window.removeEventListener('storage', fetchEvents);
   }, []);
 
   return (
@@ -42,16 +39,16 @@ export function UpcomingEvents() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-              Upcoming <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-purple-400">Events</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 md:mb-6 leading-tight">
+              Upcoming <span className="animate-gradient-flow italic font-serif">Events</span>
             </h2>
             <p className="text-lg text-zinc-400">
               Join us at these spectacular upcoming events. Experience the magic of Stellar Events firsthand.
             </p>
           </div>
-          <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black transition-colors rounded-full px-6">
-            View All Events
-          </Button>
+          <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-white/20 text-zinc-500 mb-2">
+            <MoveRight className="w-5 h-5" />
+          </div>
         </div>
 
         <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 gap-6 snap-x snap-mandatory hide-scrollbar">
