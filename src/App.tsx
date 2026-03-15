@@ -28,6 +28,9 @@ import {
   MapPin,
 } from "lucide-react";
 
+import { AdminPanel } from './components/AdminPanel';
+import { UpcomingEvents } from './components/UpcomingEvents';
+
 function Header() {
   const navigationItems = [
     {
@@ -782,6 +785,19 @@ function Footer() {
 }
 
 function EventPlanningHomePage() {
+  // Simple basic routing to serve the admin panel without react-router
+  const [isAdminRoute, setIsAdminRoute] = React.useState(false);
+
+  React.useEffect(() => {
+    if (window.location.pathname === '/adm') {
+      setIsAdminRoute(true);
+    }
+  }, []);
+
+  if (isAdminRoute) {
+    return <AdminPanel />;
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <div className="relative z-10 w-full h-full">
@@ -791,6 +807,7 @@ function EventPlanningHomePage() {
         <div id="about" className="w-full bg-transparent pt-32 pb-16">
           <ParallaxScrollSecond images={parallaxImages} className="bg-transparent" />
         </div>
+        <UpcomingEvents />
         <ServicesSection />
         <ContactSection />
         <Footer />
