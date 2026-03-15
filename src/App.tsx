@@ -807,8 +807,8 @@ function EventPlanningHomePage() {
         <div id="about" className="w-full bg-transparent pt-32 pb-16">
           <ParallaxScrollSecond images={parallaxImages} className="bg-transparent" />
         </div>
-        <UpcomingEvents />
         <ServicesSection />
+        <UpcomingEvents />
         <ContactSection />
         <Footer />
       </div>

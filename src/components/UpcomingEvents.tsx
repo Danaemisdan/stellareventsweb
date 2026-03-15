@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Calendar, Clock, MoveRight } from 'lucide-react';
 import type { EventData } from './AdminPanel';
+import { DEFAULT_EVENTS } from './AdminPanel';
 
 export function UpcomingEvents() {
   const [events, setEvents] = useState<EventData[]>([]);
@@ -12,10 +13,17 @@ export function UpcomingEvents() {
       const stored = localStorage.getItem('stellar_events');
       if (stored) {
         try {
-          setEvents(JSON.parse(stored));
+          const parsed = JSON.parse(stored);
+          if (parsed && parsed.length > 0) {
+            setEvents(parsed);
+          } else {
+            setEvents(DEFAULT_EVENTS);
+          }
         } catch (e) {
-          // Fallback to empty
+          setEvents(DEFAULT_EVENTS);
         }
+      } else {
+        setEvents(DEFAULT_EVENTS);
       }
     };
 
@@ -24,10 +32,6 @@ export function UpcomingEvents() {
     window.addEventListener('storage', fetchEvents);
     return () => window.removeEventListener('storage', fetchEvents);
   }, []);
-
-  if (events.length === 0) {
-    return null; // Don't show the section at all if there are no events
-  }
 
   return (
     <section className="py-24 bg-zinc-950 relative overflow-hidden">

@@ -14,7 +14,7 @@ export type EventData = {
   bannerObjUrl: string;
 }
 
-const DEFAULT_EVENTS: EventData[] = [
+export const DEFAULT_EVENTS: EventData[] = [
   {
     id: '1',
     title: 'Aura Music Festival',
